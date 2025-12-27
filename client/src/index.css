@@ -1,0 +1,151 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
+
+/* ChugLi Design System - Warm, Soft Aesthetic */
+
+@layer base {
+  :root {
+    /* Warm beige palette */
+    --background: 40 33% 96%;
+    --foreground: 25 12% 25%;
+
+    --card: 40 30% 98%;
+    --card-foreground: 25 12% 25%;
+
+    --popover: 40 30% 98%;
+    --popover-foreground: 25 12% 25%;
+
+    /* Deep charcoal brown primary */
+    --primary: 25 12% 32%;
+    --primary-foreground: 40 33% 96%;
+
+    /* Warm secondary */
+    --secondary: 35 20% 90%;
+    --secondary-foreground: 25 12% 32%;
+
+    --muted: 35 15% 88%;
+    --muted-foreground: 25 8% 50%;
+
+    /* Coral accent */
+    --accent: 12 76% 61%;
+    --accent-foreground: 0 0% 100%;
+
+    /* Danger red */
+    --destructive: 0 72% 51%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 35 20% 85%;
+    --input: 35 20% 88%;
+    --ring: 25 12% 32%;
+
+    --radius: 1rem;
+
+    /* Custom ChugLi tokens */
+    --glass: 40 30% 98% / 0.8;
+    --shadow-soft: 0 4px 20px -4px hsl(25 12% 25% / 0.1);
+    --shadow-elevated: 0 8px 30px -8px hsl(25 12% 25% / 0.15);
+    --gradient-warm: linear-gradient(135deg, hsl(40 33% 96%), hsl(35 25% 92%));
+    --gradient-card: linear-gradient(180deg, hsl(40 30% 99%), hsl(40 28% 96%));
+
+    --sidebar-background: 40 33% 96%;
+    --sidebar-foreground: 25 12% 25%;
+    --sidebar-primary: 25 12% 32%;
+    --sidebar-primary-foreground: 40 33% 96%;
+    --sidebar-accent: 35 20% 90%;
+    --sidebar-accent-foreground: 25 12% 32%;
+    --sidebar-border: 35 20% 85%;
+    --sidebar-ring: 25 12% 32%;
+  }
+
+  .dark {
+    --background: 25 15% 10%;
+    --foreground: 40 20% 92%;
+
+    --card: 25 12% 14%;
+    --card-foreground: 40 20% 92%;
+
+    --popover: 25 12% 14%;
+    --popover-foreground: 40 20% 92%;
+
+    --primary: 40 25% 88%;
+    --primary-foreground: 25 15% 10%;
+
+    --secondary: 25 10% 20%;
+    --secondary-foreground: 40 20% 92%;
+
+    --muted: 25 10% 22%;
+    --muted-foreground: 35 12% 60%;
+
+    --accent: 12 76% 61%;
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 0 62% 45%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 25 10% 22%;
+    --input: 25 10% 22%;
+    --ring: 40 25% 88%;
+
+    --glass: 25 12% 14% / 0.8;
+    --shadow-soft: 0 4px 20px -4px hsl(0 0% 0% / 0.3);
+    --shadow-elevated: 0 8px 30px -8px hsl(0 0% 0% / 0.4);
+    --gradient-warm: linear-gradient(135deg, hsl(25 15% 10%), hsl(25 12% 14%));
+    --gradient-card: linear-gradient(180deg, hsl(25 12% 16%), hsl(25 12% 12%));
+
+    --sidebar-background: 25 15% 10%;
+    --sidebar-foreground: 40 20% 92%;
+    --sidebar-primary: 40 25% 88%;
+    --sidebar-primary-foreground: 25 15% 10%;
+    --sidebar-accent: 25 10% 20%;
+    --sidebar-accent-foreground: 40 20% 92%;
+    --sidebar-border: 25 10% 22%;
+    --sidebar-ring: 40 25% 88%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-sans antialiased;
+    font-family: 'Inter', sans-serif;
+  }
+}
+
+@layer components {
+  .glass-effect {
+    @apply backdrop-blur-xl;
+    background: hsl(var(--glass));
+  }
+
+  .card-elevated {
+    box-shadow: var(--shadow-elevated);
+    background: var(--gradient-card);
+  }
+
+  .card-soft {
+    box-shadow: var(--shadow-soft);
+  }
+
+  .pulse-live {
+    animation: pulse-live 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+  }
+
+  @keyframes pulse-live {
+    0%, 100% {
+      opacity: 1;
+    }
+    50% {
+      opacity: 0.5;
+    }
+  }
+
+  .gradient-warm {
+    background: var(--gradient-warm);
+  }
+}
