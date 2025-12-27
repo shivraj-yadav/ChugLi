@@ -1,11 +1,6 @@
 # ChugLi
 
-Anonymous, location-based chat rooms with real-time messaging.
 
-## Repository Name
-**ChugLi**
-
-## Description
 A lightweight MERN + Socket.io app where users can create nearby, short-lived chat rooms and chat in real time — with anonymous handles and ephemeral messages.
 
 ## Tech Stack
@@ -110,6 +105,3 @@ If you want to override the API URL, set:
 ## Notes
 - Messages are **not persisted** to MongoDB (ephemeral). The server only keeps a small in-memory buffer for recent history.
 - Do not commit secrets: add your real values only in `backend/.env`.
-
-## License
-MIT
