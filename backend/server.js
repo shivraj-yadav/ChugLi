@@ -14,13 +14,15 @@ const app = express();
 
 const server = http.createServer(app);
 
+const corsOrigin = (process.env.CORS_ORIGIN || "*").replace(/\/+$/, "");
+
 const roomMessages = new Map();
 const MAX_ROOM_MESSAGES = 50;
 
 const io = new Server(server, {
   cors: {
-    origin: process.env.CORS_ORIGIN || "*",
-    methods: ["GET", "POST"],
+    origin: corsOrigin,
+    methods: ["GET", "POST", "OPTIONS"],
   },
 });
 
@@ -31,7 +33,7 @@ app.use(express.json());
 
 app.use(
   cors({
-    origin: process.env.CORS_ORIGIN || "*",
+    origin: corsOrigin,
   })
 );
 
